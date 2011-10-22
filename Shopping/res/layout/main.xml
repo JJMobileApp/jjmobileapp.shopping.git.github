@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/LinearLayout1" xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent" android:orientation="vertical" android:layout_width="match_parent" android:gravity="top">
+    <TextView android:layout_height="wrap_content" android:layout_marginTop="53dp" android:gravity="center" android:layout_width="fill_parent" android:text="@string/MenuTtvChooseMenu" android:id="@+id/menuTtvChooseMenu"></TextView>
+    <Button android:layout_height="wrap_content" android:layout_marginTop="25dp" android:layout_gravity="center" android:layout_width="160dp" android:text="@string/MenuBtnNew" android:id="@+id/menuBtnNew"></Button>
+<Button android:layout_height="wrap_content" android:layout_marginTop="16dp" android:layout_gravity="center" android:layout_width="160dp" android:text="@string/MenuBtnBasket" android:id="@+id/menuBtnBasket"></Button>
+<Button android:layout_height="wrap_content" android:layout_marginTop="14dp" android:layout_gravity="center" android:layout_width="160dp" android:text="@string/MenuBtnAbout" android:id="@+id/menuBtnAbout"></Button>
+<Button android:layout_height="wrap_content" android:layout_marginTop="14dp" android:layout_gravity="center" android:layout_width="160dp" android:text="@string/MenuBtnExit" android:id="@+id/menuBtnExit"></Button>
+</LinearLayout>
