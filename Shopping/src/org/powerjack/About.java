@@ -8,6 +8,9 @@ import android.widget.*;
 
 public class About extends Activity{
 	private Button btnExit;	
+	/*
+	 * To jest testowy komentarz
+	 * */
 	
 	@Override
 	protected void onCreate(Bundle icicle){
