@@ -41,7 +41,7 @@ public class Nowy extends ListActivity{
 		ttvCenaRazem = (TextView)findViewById(R.id.NowyTtvRazem);
 		//ttvProdukty = (TextView)findViewById(R.id.NowyTtvProdukty);
 		
-		db = new DbAdapter(this);
+		db = new DbAdapter();
 		db.open();
 		
 		
@@ -54,6 +54,8 @@ public class Nowy extends ListActivity{
 				else{
 					try{
 						
+						db.createItem(edtProdukt.getText().toString(), edtCena.getText().toString());
+						finish();
 						
 						//SQLiteDatabase baza = null;
 						//baza = openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
@@ -73,9 +75,9 @@ public class Nowy extends ListActivity{
 						//
 						//ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.nowytextview, R.id.textview, ListaZakupow);
 						// setListAdapter(adapter);
-						edtProdukt.setText("");
-						edtCena.setText("");
-						edtProdukt.requestFocus();
+						// edtProdukt.setText("");
+						// edtCena.setText("");
+						// edtProdukt.requestFocus();
 						
 						
 						/*
@@ -108,7 +110,4 @@ public class Nowy extends ListActivity{
 		});
 		
 	}
-	
-	
-	
 }

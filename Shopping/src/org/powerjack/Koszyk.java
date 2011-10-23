@@ -13,24 +13,32 @@ import android.widget.ArrayAdapter;
 import java.util.ArrayList;
 
 public class Koszyk extends ListActivity{
-	private final String DB_NAME = "Zakupy";
-
-	ArrayList<String> ListaZakupow = new ArrayList<String>();
+	
+	//private final String DB_NAME = "Zakupy";
+	//ArrayList<String> ListaZakupow = new ArrayList<String>();
+	private DbAdapter db;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		
+		setContentView(R.layout.koszyk);
+		
+		db.open();
+		
+		fillData();
+		
 		try{
 			
-			SQLiteDatabase baza = null;
-			baza = openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
+			//SQLiteDatabase baza = null;
+			//baza = openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
 			
 			//baza.execSQL("CREATE TABLE IF NOT EXISTS Zakupy(Produkt VARCHAR, Cena VARCHAR)");
 			//baza.execSQL("INSERT INTO Zakupy Values('" + edtProdukt.getText().toString() + "', '" + edtCena.getText().toString() + "')");
 			
-			Cursor cursor = baza.rawQuery("SELECT * FROM Zakupy ORDER BY Produkt", null);
+			//Cursor cursor = baza.rawQuery("SELECT * FROM Zakupy ORDER BY Produkt", null);
 			
+			/*
 			if(cursor.moveToFirst()){
 				do{
 					String Produkt = cursor.getString(cursor.getColumnIndex("Produkt"));
@@ -41,6 +49,7 @@ public class Koszyk extends ListActivity{
 			
 			ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.koszyktextview, R.id.KoszykTtvProduktPlusCena, ListaZakupow);
 			setListAdapter(adapter);
+			*/
 			//edtProdukt.setText("");
 			//edtCena.setText("");
 			//edtProdukt.requestFocus();
@@ -65,4 +74,11 @@ public class Koszyk extends ListActivity{
 		}
 		
 	}
+
+	private void fillData()
+	{
+		
+		Cursor items
+	}
+
 }
