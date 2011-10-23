@@ -22,6 +22,7 @@ public class Koszyk extends ListActivity{
 		super.onCreate(savedInstanceState);
 		
 		try{
+			
 			SQLiteDatabase baza = null;
 			baza = openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
 			

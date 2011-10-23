@@ -16,4 +16,6 @@
     <string name="NowyEdtProdukt"></string>
     <string name="NowyTtvIloscProduktow">Ilosc produktów:</string>
     <string name="NowyTtvRazem">Razem:</string>
+    <string name="NoItems">Brak produktów na liście</string>
+    
 </resources>

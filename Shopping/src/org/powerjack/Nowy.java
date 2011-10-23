@@ -23,10 +23,11 @@ public class Nowy extends ListActivity{
 	private int iloscProduktow;
 	private float cenaRazem;
 	private TextView ttvProdukty;
-	private final String DB_NAME = "Zakupy";
+	//private final String DB_NAME = "Zakupy";
+	private DbAdapter db;
 	
 	ArrayList<String> ListaZakupow = new ArrayList<String>();
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -40,12 +41,9 @@ public class Nowy extends ListActivity{
 		ttvCenaRazem = (TextView)findViewById(R.id.NowyTtvRazem);
 		//ttvProdukty = (TextView)findViewById(R.id.NowyTtvProdukty);
 		
-		btnExit.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				finish();
-			}
-		});
+		db = new DbAdapter(this);
+		db.open();
+		
 		
 		btnDodaj.setOnClickListener(new OnClickListener(){
 			public void onClick(View v){
@@ -55,24 +53,26 @@ public class Nowy extends ListActivity{
 				}
 				else{
 					try{
-						SQLiteDatabase baza = null;
-						baza = openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
 						
-						baza.execSQL("CREATE TABLE IF NOT EXISTS Zakupy(Produkt VARCHAR, Cena VARCHAR)");
-						baza.execSQL("INSERT INTO Zakupy Values('" + edtProdukt.getText().toString() + "', '" + edtCena.getText().toString() + "')");
 						
-						Cursor cursor = baza.rawQuery("SELECT * FROM Zakupy ORDER BY Produkt", null);
+						//SQLiteDatabase baza = null;
+						//baza = openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
+					
+						//baza.execSQL("CREATE TABLE IF NOT EXISTS Zakupy(Produkt VARCHAR, Cena VARCHAR)");
+						//baza.execSQL("INSERT INTO Zakupy Values('" + edtProdukt.getText().toString() + "', '" + edtCena.getText().toString() + "')");
 						
-						if(cursor.moveToFirst()){
-							do{
-								String Produkt = cursor.getString(cursor.getColumnIndex("Produkt"));
-								String Cena = cursor.getString(cursor.getColumnIndex("Cena"));
-								ListaZakupow.add(0, Produkt + " " + Cena);
-							}while(cursor.moveToNext());
-						}
+						//Cursor cursor = baza.rawQuery("SELECT * FROM Zakupy ORDER BY Produkt", null);
 						
-						ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.nowytextview, R.id.textview, ListaZakupow);
-						setListAdapter(adapter);
+						//if(cursor.moveToFirst()){
+						//	do{
+						//		String Produkt = cursor.getString(cursor.getColumnIndex("Produkt"));
+						//		String Cena = cursor.getString(cursor.getColumnIndex("Cena"));
+						//		ListaZakupow.add(0, Produkt + " " + Cena);
+						//	}while(cursor.moveToNext());
+						//}
+						//
+						//ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.nowytextview, R.id.textview, ListaZakupow);
+						// setListAdapter(adapter);
 						edtProdukt.setText("");
 						edtCena.setText("");
 						edtProdukt.requestFocus();
@@ -99,5 +99,16 @@ public class Nowy extends ListActivity{
 				}
 			}
 		});
+	
+		btnExit.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				finish();
+			}
+		});
+		
 	}
+	
+	
+	
 }
