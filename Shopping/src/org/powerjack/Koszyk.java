@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.SimpleCursorAdapter;
 
 import java.util.ArrayList;
 
@@ -28,7 +29,7 @@ public class Koszyk extends ListActivity{
 		
 		fillData();
 		
-		try{
+		/*try{
 			
 			//SQLiteDatabase baza = null;
 			//baza = openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
@@ -68,17 +69,25 @@ public class Koszyk extends ListActivity{
 			edtCena.setText("");
 			edtProdukt.requestFocus();
 			*/
-		}
+		/*}
 		catch (Exception ex){
 			Log.d("Exception", ex.getMessage().toString());
-		}
+		}*/
 		
 	}
 
 	private void fillData()
 	{
 		
-		Cursor items
+		Cursor itemsCursor = db.fetchAllItem();
+		startManagingCursor(itemsCursor);
+	
+		String[] from = new String [] { DbAdapter.KEY_NAME };
+		int[] to = new int[] { R.id.name };
+		
+		SimpleCursorAdapter items = new SimpleCursorAdapter(this,R.layout.list_item, itemsCursor, from, to); 
+		setListAdapter(items);
+		
 	}
 
 }
