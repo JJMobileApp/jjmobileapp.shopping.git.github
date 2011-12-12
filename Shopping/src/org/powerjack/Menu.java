@@ -20,11 +20,11 @@ public class Menu extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        ttvChooseMenu = (TextView)findViewById(R.id.menuTtvChooseMenu);
-        btnNew = (Button)findViewById(R.id.menuBtnNew);
-        btnBasket = (Button)findViewById(R.id.menuBtnBasket);
-        btnAbout = (Button)findViewById(R.id.menuBtnAbout);
-        btnExit = (Button)findViewById(R.id.menuBtnExit);
+        ttvChooseMenu = (TextView) findViewById(R.id.menuTtvChooseMenu);
+        btnNew = (Button) findViewById(R.id.menuBtnNew);
+        btnBasket = (Button) findViewById(R.id.menuBtnBasket);
+        btnAbout = (Button) findViewById(R.id.menuBtnAbout);
+        btnExit = (Button) findViewById(R.id.menuBtnExit);
         
         btnNew.setOnClickListener(new OnClickListener(){
         	public void onClick(View v){

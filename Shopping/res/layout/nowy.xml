@@ -1,19 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:id="@+id/RelativeLayout1"
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="vertical"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent">
-    <TextView android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:text="@string/NowyTtvZakup" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/NowyTtvProdukt"></TextView>
-    <EditText android:layout_alignParentLeft="true" android:layout_below="@+id/NowyTtvProdukt" android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/NowyEdtProdukt" android:text="@string/NowyEdtProdukt">
-        <requestFocus></requestFocus>
-    </EditText>
-    <TextView android:layout_alignParentLeft="true" android:layout_below="@+id/NowyEdtProdukt" android:text="@string/NowyTtvCena" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/textView2"></TextView>
-    <EditText android:layout_alignParentLeft="true" android:layout_below="@+id/textView2" android:layout_height="wrap_content" android:layout_width="match_parent" android:inputType="numberDecimal" android:text="@string/NowyEdtCena" android:id="@+id/NowyEdtCena"></EditText>
-    <Button android:layout_alignParentRight="true" android:layout_below="@+id/NowyEdtCena" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/NowyBtnDodaj" android:id="@+id/NowyBtnDodaj" android:layout_gravity="right"></Button>
-    <Button android:layout_alignParentRight="true" android:layout_below="@+id/NowyBtnDodaj" android:layout_height="wrap_content" android:id="@+id/NowyBtnExit" android:layout_width="wrap_content" android:text="@string/NowyBtnExit" android:layout_gravity="right"></Button>
-    <ListView android:layout_alignParentLeft="true" android:layout_below="@+id/NowyBtnExit" android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/@android:id/list"></ListView>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignBottom="@+id/NowyBtnDodaj" android:text="@string/NowyTtvIloscProduktow" android:id="@+id/NowyTtvIloscProduktow" android:inputType="number"></TextView>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignBaseline="@+id/NowyBtnExit" android:layout_alignBottom="@+id/NowyBtnExit" android:layout_alignLeft="@+id/NowyTtvIloscProduktow" android:id="@+id/NowyTtvRazem" android:text="@string/NowyTtvRazem"></TextView>
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     
+    <TextView android:layout_alignParentLeft="true" android:layout_alignParentTop="true" 
+        android:text="@string/NowyTtvZakup" android:layout_height="wrap_content" 
+        android:layout_width="wrap_content" android:id="@+id/NowyTtvProdukt">
+    </TextView>
+    
+    <EditText android:layout_alignParentLeft="true" android:layout_below="@+id/NowyTtvProdukt" 
+        android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/NowyEdtProdukt" 
+        android:text="@string/NowyEdtProdukt">
+        <requestFocus></requestFocus>        
+    </EditText>
+    
+    <TextView android:layout_alignParentLeft="true" android:layout_below="@+id/NowyEdtProdukt" 
+        android:text="@string/NowyTtvCena" android:layout_height="wrap_content" android:layout_width="wrap_content" 
+        android:id="@+id/textView2">
+    </TextView>
+    
+    <EditText android:layout_alignParentLeft="true" android:layout_below="@+id/textView2" 
+        android:layout_height="wrap_content" android:layout_width="match_parent" 
+        android:inputType="numberDecimal" android:text="@string/NowyEdtCena" android:id="@+id/NowyEdtCena">
+    </EditText>
+    
+    <Button android:layout_alignParentRight="true" android:layout_below="@+id/NowyEdtCena" 
+        android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/NowyBtnDodaj" 
+        android:id="@+id/NowyBtnDodaj" android:layout_gravity="right">
+    </Button>
+    
+    <Button android:layout_alignParentRight="true" 
+        android:layout_below="@+id/NowyBtnDodaj" android:layout_height="wrap_content" 
+        android:id="@+id/NowyBtnExit" android:layout_width="wrap_content" android:text="@string/NowyBtnExit" 
+        android:layout_gravity="right">
+    </Button>
+      
+    <TextView
+        android:id="@+id/NowyTtvIloscProduktow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/NowyBtnDodaj"
+        android:inputType="number"
+        android:text="@string/NowyTtvIloscProduktow" >
+    </TextView>
+    
+    <TextView
+        android:id="@+id/NowyTtvRazem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/NowyBtnExit"
+        android:layout_alignLeft="@+id/NowyTtvIloscProduktow"
+        android:layout_alignRight="@+id/textView2"
+        android:text="@string/NowyTtvRazem" >
+    </TextView>
+    
+        
 </RelativeLayout>
